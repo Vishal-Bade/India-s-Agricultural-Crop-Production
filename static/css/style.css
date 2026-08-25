@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-color: #e6eef8;
+    --text-color: #2d3748;
+    --text-muted: #718096;
+    --primary-color: #1f4b8f;
+    --primary-grad: linear-gradient(135deg, #1f4b8f, #2563eb);
+    --warning-grad: linear-gradient(135deg, #f59e0b, #ee5e0a);
+    --light-shadow: #ffffff;
+    --dark-shadow: #b8c4d2;
+    --accent-blue: #00d4ff;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #0d1b2a;
+}
+
+/* Neumorphism Classes */
+.nm-raised {
+    background: var(--bg-color);
+    box-shadow: 9px 9px 18px var(--dark-shadow), -9px -9px 18px var(--light-shadow);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 24px;
+}
+
+.nm-raised-interactive {
+    background: var(--bg-color);
+    box-shadow: 9px 9px 18px var(--dark-shadow), -9px -9px 18px var(--light-shadow);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nm-raised-interactive:hover {
+    transform: translateY(-5px);
+    box-shadow: 14px 14px 28px var(--dark-shadow), -14px -14px 28px var(--light-shadow);
+}
+
+.nm-raised-interactive:active {
+    transform: translateY(1px);
+    box-shadow: 4px 4px 8px var(--dark-shadow), -4px -4px 8px var(--light-shadow);
+}
+
+.nm-sunken {
+    background: var(--bg-color);
+    box-shadow: inset 6px 6px 12px var(--dark-shadow), inset -6px -6px 12px var(--light-shadow);
+    border-radius: 20px;
+    border: none;
+    padding: 24px;
+}
+
+/* Navbar */
+.nm-navbar {
+    background: var(--bg-color);
+    box-shadow: 0 4px 15px rgba(184, 196, 210, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 15px 0;
+}
+
+.nm-navbar .navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 800;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.nm-navbar .nav-link {
+    color: var(--text-color) !important;
+    font-weight: 600;
+    margin-left: 10px;
+    padding: 8px 16px !important;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.nm-navbar .nav-link:hover {
+    color: var(--primary-color) !important;
+    background: var(--bg-color);
+    box-shadow: 3px 3px 6px var(--dark-shadow), -3px -3px 6px var(--light-shadow);
+}
+
+.nm-navbar .nav-link.active {
+    box-shadow: inset 3px 3px 6px var(--dark-shadow), inset -3px -3px 6px var(--light-shadow);
+    color: var(--primary-color) !important;
+}
+
+/* Buttons */
+.nm-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 600;
+    color: var(--text-color) !important;
+    background: var(--bg-color);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 10px var(--dark-shadow), -5px -5px 10px var(--light-shadow);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    text-align: center;
+}
+
+.nm-btn:hover {
+    box-shadow: 2px 2px 5px var(--dark-shadow), -2px -2px 5px var(--light-shadow);
+    transform: translateY(-1px);
+    color: var(--primary-color) !important;
+}
+
+.nm-btn:active {
+    box-shadow: inset 3px 3px 6px var(--dark-shadow), inset -3px -3px 6px var(--light-shadow);
+    transform: translateY(1px);
+}
+
+.nm-btn-primary {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 600;
+    color: white !important;
+    background: var(--primary-grad);
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 10px var(--dark-shadow), -5px -5px 10px var(--light-shadow);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nm-btn-primary:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 7px 7px 14px var(--dark-shadow), -7px -7px 14px var(--light-shadow);
+}
+
+.nm-btn-primary:active {
+    transform: translateY(1px);
+    box-shadow: inset 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+.nm-btn-warning {
+    display: inline-block;
+    padding: 12px 28px;
+    font-weight: 600;
+    color: white !important;
+    background: var(--warning-grad);
+    border-radius: 15px;
+    border: none;
+    box-shadow: 5px 5px 10px var(--dark-shadow), -5px -5px 10px var(--light-shadow);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    text-align: center;
+}
+
+.nm-btn-warning:hover {
+    opacity: 0.95;
+    transform: translateY(-2px);
+    box-shadow: 7px 7px 14px var(--dark-shadow), -7px -7px 14px var(--light-shadow);
+}
+
+.nm-btn-warning:active {
+    transform: translateY(1px);
+    box-shadow: inset 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Badges / Skills */
+.nm-badge {
+    display: inline-block;
+    background: var(--bg-color);
+    color: var(--primary-color);
+    box-shadow: inset 3px 3px 6px var(--dark-shadow), inset -3px -3px 6px var(--light-shadow);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    margin: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.2s ease;
+}
+
+.nm-badge:hover {
+    box-shadow: 3px 3px 6px var(--dark-shadow), -3px -3px 6px var(--light-shadow);
+    color: #2563eb;
+}
+
+/* Frame for Embedded Tableau visualizations */
+.nm-iframe-container {
+    padding: 24px;
+    background: var(--bg-color);
+    box-shadow: inset 6px 6px 15px var(--dark-shadow), inset -6px -6px 15px var(--light-shadow);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.5);
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.nm-iframe-container iframe {
+    border-radius: 16px;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.05);
+    min-width: 1450px;
+}
+
+/* Stat Circle/Header text spacing */
+.nm-stat {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 2px var(--light-shadow);
+}
+
+/* Footer styling */
+.nm-footer {
+    background: var(--bg-color);
+    box-shadow: inset 0 6px 12px var(--dark-shadow), inset 0 -6px 12px var(--light-shadow);
+    color: var(--text-color);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
